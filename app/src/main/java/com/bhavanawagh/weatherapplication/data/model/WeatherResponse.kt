@@ -12,7 +12,7 @@ data class WeatherResponse(
 //    @SerializedName("rain"       ) var rain       : Rain,
 //    @SerializedName("clouds"     ) var clouds     : Clouds,
 //    @SerializedName("dt"         ) var dt         : Int,
-//    @SerializedName("sys"        ) var sys        : Sys,
+    @SerializedName("sys"        ) var sys        : Sys,
     @SerializedName("timezone"   ) var timezone   : Int,
     @SerializedName("id"         ) var id         : Int,
     @SerializedName("name"       ) var name       : String,

@@ -25,7 +25,7 @@ class ApplicationModule {
     @Provides
     fun provideBaseUrl(): String = "https://api.openweathermap.org/"
 
-   //Generated API key from OpenWeather.com
+    //Generated API key from OpenWeather.com
     @WeatherApiKey
     @Provides
     fun provideNetworkApiKey(): String = "40120425479a73ac81a2208d0b7dbdc6"
@@ -42,7 +42,6 @@ class ApplicationModule {
 
     @Provides
     fun provideOkHttpClient(
-        @ApplicationContext appContext: Context,
         loggerInterceptor: HttpLoggingInterceptor
     ): OkHttpClient = OkHttpClient()
         .newBuilder()

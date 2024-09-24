@@ -1,7 +1,9 @@
 package com.bhavanawagh.weatherapplication.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Sys(
-    val country: String,
-    val sunrise: Int,
-    val sunset: Int
+   @SerializedName("country") val country: String,
+   @SerializedName("sunrise")  val sunrise: Int,
+   @SerializedName("sunset") val sunset: Int
 )

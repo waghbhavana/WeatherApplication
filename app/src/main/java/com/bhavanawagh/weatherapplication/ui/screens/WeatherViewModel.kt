@@ -17,6 +17,7 @@ class WeatherViewModel @Inject constructor(private val repository: WeatherReposi
 
     private val _weatherResponse = MutableLiveData<NetworkResponse<WeatherResponse>>()
     val weatherResponse: MutableLiveData<NetworkResponse<WeatherResponse>> = _weatherResponse
+   //Get lan-lon for user entered city name
     fun getLatLonByCityName(city: String) {
         viewModelScope.launch {
             // Here If I would have more time Instead of getting lat lon of entered city I would have get list of cities getting from api and
@@ -26,8 +27,9 @@ class WeatherViewModel @Inject constructor(private val repository: WeatherReposi
                 val response = repository.getLatLonForCity(city)
                 if (response.isSuccessful) {
                     if (response.body()?.size == 0) {
-                        _weatherResponse.value = NetworkResponse.Error("Please enter valid city name!")
-                    }else {
+                        _weatherResponse.value =
+                            NetworkResponse.Error("Please enter valid city name!")
+                    } else {
                         val lat: Double? = response.body()?.get(0)?.lat
                         val lon: Double? = response.body()?.get(0)?.lon
                         if (lat != null && lon != null) {
@@ -40,13 +42,15 @@ class WeatherViewModel @Inject constructor(private val repository: WeatherReposi
                     _weatherResponse.value = NetworkResponse.Error("Please enter valid city name!")
                 }
 
-            }catch(_: Exception){}
+            } catch (_: Exception) {
+            }
 
         }
 
     }
 
-    private suspend fun getWeatherFromLatLon(lat: Double, lon: Double ){
+    //  Get weather details for lat lon for that city
+    private suspend fun getWeatherFromLatLon(lat: Double, lon: Double) {
         try {
             val weatherResult = repository.getWeatherForLatLon(lat, lon)
 
@@ -57,7 +61,8 @@ class WeatherViewModel @Inject constructor(private val repository: WeatherReposi
             } else {
                 _weatherResponse.value = NetworkResponse.Error("Fail to load data!")
             }
-        }catch(_: Exception){}
+        } catch (_: Exception) {
+        }
 
     }
 }

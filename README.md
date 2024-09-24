@@ -8,3 +8,4 @@
 - **Livedata** tonotifies Observer objects when data changes.
 - **Coil** libray in android to load images.
 - **Coroutines**  for concurrent tasks.
+

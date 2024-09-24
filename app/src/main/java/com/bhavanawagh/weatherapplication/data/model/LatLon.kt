@@ -1,9 +1,11 @@
 package com.bhavanawagh.weatherapplication.data.model
+import com.google.gson.annotations.SerializedName
+data class LatLon (
 
-data class LatLon(
-    val country: String,
-    val lat: Double,
-    val lon: Double,
-    val name: String,
-    val state: String
+    @SerializedName("name") var name    : String,
+    @SerializedName("lat") var lat     : Double,
+    @SerializedName("lon") var lon     : Double,
+    @SerializedName("country") var country : String,
+    @SerializedName("state") var state   : String
+
 )

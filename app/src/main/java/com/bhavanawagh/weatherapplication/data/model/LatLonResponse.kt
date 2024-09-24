@@ -1,3 +1,3 @@
 package com.bhavanawagh.weatherapplication.data.model
 
-class LatLonResponse : ArrayList<LatLon>()
+data class LatLonResponse (var latLonList: ArrayList<LatLon>)

@@ -9,3 +9,15 @@
 - **Coil** libray in android to load images.
 - **Coroutines**  for concurrent tasks.
 
+## Screenshots from the app
+<p align="center">
+<img alt="screenshots"  src="app/src/main/res/assest/Screenshot_20240924_133208.png">
+</p>
+
+<p align="center">
+<img alt="screenshots"  src="app/src/main/res/assest/Screenshot_20240924_133300.png">
+</p>
+
+<p align="center">
+<img alt="screenshots"  src="app/src/main/res/assest/Screenshot_20240924_133341.png">
+</p>

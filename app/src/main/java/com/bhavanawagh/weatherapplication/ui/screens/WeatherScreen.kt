@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun WeatherScreen(){
+fun WeatherScreen(viewModel: WeatherViewModel){
 
     var city by remember {
         mutableStateOf("")
@@ -50,7 +50,9 @@ fun WeatherScreen(){
                     Text(text = "Search for any location")
                 }
             )
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = {
+                viewModel.getLatLonByCityName(city)
+            }) {
                 Icon(imageVector = Icons.Default.Search, contentDescription = "")
 
             }
